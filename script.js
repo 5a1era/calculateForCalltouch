@@ -1,5 +1,6 @@
 'use strict';
 
+const button = document.querySelector('button');
 
 const calculate = {
     valueOne: '',
@@ -7,20 +8,20 @@ const calculate = {
     operator: '',
     result: '',
     readValues: () => {
-        calculate.valueOne = +document.getElementById('valueOne').value;
-        calculate.valueTwo = +document.getElementById('valueTwo').value;
-        calculate.operator = document.getElementById('operator').value;
+        calculate.valueOne = +document.querySelector('#valueOne').value;
+        calculate.valueTwo = +document.querySelector('#valueTwo').value;
+        calculate.operator = document.querySelector('#operator').value;
     },
 
     showResult: (value, color) => {
-       const result =  document.getElementById('result');
+       const result =  document.querySelector('#result');
        result.innerHTML = value;
        result.style.color = color;  
     },
 
     calc: () => {
         calculate.readValues();
-        if(calculate.valueOne != '' && !isNaN(calculate.valueOne) && 
+        if(!isNaN(calculate.valueOne) && calculate.valueOne != '' && 
         calculate.valueTwo != '' && !isNaN(calculate.valueTwo)) {
         switch (calculate.operator) {
             case 'plus':
@@ -45,3 +46,5 @@ const calculate = {
         calculate.showResult(calculate.result, 'green');
     }
 };
+
+button.addEventListener('click', () => calculate.calc());

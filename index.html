@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/calculateForCalltouch/style.css">
     <title>Calculate</title>
 </head>
 
@@ -13,7 +13,7 @@
         <h1>This calculate can add, subtract, multiply and divide two numbers.</h1>
         <div class="textCenter">
             <label class="textSize" for="valueOne">Value one: </label>
-            <input class="textSize itemIndent" type="text" id="valueOne"><br/>
+            <input required placeholder="Enter number" class="textSize itemIndent" type="number" id="valueOne"><br/>
             <label class="textSize" for="operator">Choose operator: </label>
             <select class="textSize itemIndent" name="operator" id="operator"><br/>
                 <option value="plus">+</option>
@@ -22,9 +22,9 @@
                 <option value="divide">/</option>
             </select><br />
             <label class="textSize" for="valueTwo">Value two: </label>
-            <input class="textSize itemIndent" type="text" id="valueTwo"><br/>
+            <input required placeholder="Enter number" class="textSize itemIndent" type="number" id="valueTwo"><br/>
             
-            <button class="textSize itemIndent" onclick="calculate.calc()">=</button><br/>
+            <button class="textSize itemIndent">=</button><br/>
             <span class="textSize itemIndent">Expression result: </span><span class="textSize itemIndent" id="result"></span>
             
         </div>
